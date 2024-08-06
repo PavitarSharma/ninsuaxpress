@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-white border-b sticky top-0 left-0 w-full right-0">
+      <header className="bg-white border-b sticky top-0 left-0 w-full right-0 z-50">
         <div className="flex items-center justify-between lg:flex-row flex-row-reverse py-2 gap-4 container !px-4">
         <button onClick={handleToggleMenu} className="xl:hidden inline">
             <AlignJustify size={28} />

@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/about-us"
+                  to="/career"
                   className="text-gray-700 hover:text-primary transition"
                 >
                   Career
