@@ -166,7 +166,7 @@ const Footer = () => {
                 placeholder="Your E-mail Address"
                 required
                 value={email}
-                onChange={(e) => e.target.value}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 border py-3 px-2 rounded-l border-gray-300 border-r-0 outline-none text-sm text-gray-800"
               />
               <button
