@@ -33,57 +33,59 @@ const LeadershipTeam = () => {
         </div>
       </div>
 
-      <div className="py-8 grid xl:grid-cols-4 md:grid-cols-3  min-[476px]:grid-cols-2 gap-6 container">
-        {leadershipTeams.map((member, index) => {
-          return (
-            <div
-              key={index}
-              className="p-4 rounded flex flex-col items-center space-y-4"
-            >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-20 h-20 rounded-full object-cover"
-              />
-              <div>
-                <h4 className="font-semibold font-poppins text-lg text-center">
-                  {member.name}
-                </h4>
-                <p className="text-sm text-primary font-medium text-center">
-                  {member.position}
-                </p>
-              </div>
+      <div className="">
+        <div className="py-8 grid xl:grid-cols-4 md:grid-cols-3  min-[476px]:grid-cols-2 gap-6 container ">
+          {leadershipTeams.map((member, index) => {
+            return (
+              <div
+                key={index}
+                className="p-4 rounded flex flex-col items-center space-y-4 border"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-20 h-20 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold font-poppins text-lg text-center">
+                    {member.name}
+                  </h4>
+                  <p className="text-sm text-primary font-medium text-center">
+                    {member.position}
+                  </p>
+                </div>
 
-              <div className="flex items-center gap-4">
-                <a
-                  href={member.twitter}
-                  target="_blank"
-                  className="text-gray-600 text-lg"
-                >
-                  <i className="fa-brands fa-x-twitter"></i>
-                </a>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  className="text-gray-600 text-lg"
-                >
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-                <a
-                  href={member.facebook}
-                  target="_blank"
-                  className="text-gray-600 text-lg"
-                >
-                  <i className="fa-brands fa-facebook"></i>
-                </a>
+                <div className="flex items-center gap-4">
+                  <a
+                    href={member.twitter}
+                    target="_blank"
+                    className="text-gray-600 text-lg"
+                  >
+                    <i className="fa-brands fa-x-twitter"></i>
+                  </a>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    className="text-gray-600 text-lg"
+                  >
+                    <i className="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a
+                    href={member.facebook}
+                    target="_blank"
+                    className="text-gray-600 text-lg"
+                  >
+                    <i className="fa-brands fa-facebook"></i>
+                  </a>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       <div className="bg-primary/10 py-16 mt-14">
-        <div className="container flex items-center justify-between flex-wrap gap-6">
+        <div className="container flex items-center justify-between flex-wrap gap-6 !px-8">
           <div>
             <h3 className="text-xl font-bold">Join Our Team Now</h3>
             <p className="max-w-2xl mt-2">

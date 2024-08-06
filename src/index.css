@@ -27,5 +27,5 @@ a {
 }
 
 .container {
-  @apply max-w-[1500px] w-full mx-auto px-4;
+  @apply max-w-[1500px] w-full mx-auto md:px-0 px-6;
 }

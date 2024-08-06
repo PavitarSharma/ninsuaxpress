@@ -226,3 +226,30 @@ export const leadershipTeams = [
     linkedin: "",
   },
 ];
+
+export const clients = [
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+];

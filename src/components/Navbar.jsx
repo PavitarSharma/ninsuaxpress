@@ -13,8 +13,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-white border-b">
-        <div className="flex items-center justify-between py-2 px-4 gap-4 container">
+      <header className="bg-white border-b sticky top-0 left-0">
+        <div className="flex items-center justify-between py-2 gap-4 container">
           <Link to="/">
             <img src="/images/logo.svg" alt="logo" className="md:w-48 w-40" />
           </Link>
