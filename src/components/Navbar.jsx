@@ -13,17 +13,16 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-white border-b sticky top-0 left-0">
-        <div className="flex items-center justify-between py-2 gap-4 container">
+      <header className="bg-white border-b sticky top-0 left-0 w-full right-0">
+        <div className="flex items-center justify-between lg:flex-row flex-row-reverse py-2 gap-4 container !px-4">
+        <button onClick={handleToggleMenu} className="xl:hidden inline">
+            <AlignJustify size={28} />
+          </button>
           <Link to="/">
             <img src="/images/logo.svg" alt="logo" className="md:w-48 w-40" />
           </Link>
-
-          <button onClick={handleToggleMenu} className="lg:hidden inline">
-            <AlignJustify size={28} />
-          </button>
           {/* Desktop */}
-          <nav className="lg:block hidden">
+          <nav className="xl:block hidden">
             <ul className="flex items-center space-x-6 list-none">
               {menuItemsData.map((menu, index) => {
                 return (
@@ -38,14 +37,17 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-6">
-            <Link to="/branch-locator" className="flex items-center space-x-2">
+            <Link
+              to="/branch-locator"
+              className="flex items-center space-x-2 w-full justify-center border px-4 py-2.5 rounded-full text-primary border-primary font-medium whitespace-nowrap"
+            >
               <Building2 />
               <span>Branch Locator</span>
             </Link>
 
             <Link
               to="/track-shipmen"
-              className="flex items-center space-x-2 hover:text-primary transition"
+              className="flex items-center space-x-2 bg-primary text-white px-4 py-2.5 rounded-full w-full text-center justify-center font-medium"
             >
               <Truck />
               <span>Track</span>
@@ -205,7 +207,7 @@ const MobileMenu = ({ open, setOpen }) => {
           onClick={handleClose}
           className="border-2 border-primary p-1 rounded-full absolute top-4 right-2 z-10 text-black"
         >
-          <X size={20} /> 
+          <X size={20} />
         </button>
         <Link to="/">
           <img src="/images/logo.svg" alt="logo" className="md:w-48 w-40" />

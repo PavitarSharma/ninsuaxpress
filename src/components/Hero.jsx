@@ -28,8 +28,14 @@ const Hero = () => {
         <p className="bg-primary/10 text-primary p-2 px-3 rounded-full text-xs">
           A Design Breakthrough
         </p>
-        <h1 className="my-4 md:text-5xl text-4xl font-bold max-w-lg text-center leading-tight">
-          The World&#39;s Laziest Design System.
+        <h1 className="my-4 md:text-5xl text-4xl font-bold max-w-6xl text-center !leading-tight">
+          <span className="text-primary">V</span><span>ersatile</span> {" "}
+          <span className="text-primary">I</span><span>ntegrated</span>{" "}
+          <span className="text-primary">N</span><span>ationwide</span> {" "}
+          <br className="md:block hidden" />
+          <span className="text-primary">S</span><span>ervices</span>{" "}
+          <span className="text-primary">U</span><span>nder</span>{" "}
+          <span className="text-primary">M</span><span>obility</span>
         </h1>
         <p className="max-w-3xl w-full text-center">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis,
@@ -50,7 +56,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b to-primary/20 from-white px-6">
+      <div className="bg-gradient-to-b to-primary/20 from-white px-4">
         <div className="max-w-6xl w-full bg-white rounded-xl  mx-auto flex ">
           <div className="w-14 h-full p-2 border-r px-2">
             <div className="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-xl font-semibold text-xl mx-auto">
@@ -155,29 +161,33 @@ const StatisticsGrid = () => {
   return (
     <div className="grid lg:grid-cols-4 gap-4">
       <StatisticCard
-        title="Audience"
-        value={1876}
+        title="Total branch"
+        value={75}
         prefix=""
         suffix=""
         icon={Users}
         badge="New"
         percentage={12}
+        des="last year"
+
       />
       <StatisticCard
-        title="Visitors"
-        value={21022}
+        title="Supply Chain Moment"
+        value={700000}
         prefix=""
         suffix=""
         icon={Eye}
         percentage={-8}
+        des="metric ton per year"
       />
       <StatisticCard
-        title="Conversion"
-        value={9881118}
+        title="Man Power"
+        value={1280}
         prefix=""
         suffix=""
         icon={LayoutDashboard}
         percentage={8.9}
+        des="3.9 in last year"
       />
       <StatisticCard
         title="Total Rate"
@@ -197,9 +207,8 @@ const StatisticCard = ({
   value,
   prefix,
   suffix,
-  icon: Icon,
+  des,
   badge,
-  percentage,
 }) => {
   // eslint-disable-next-line no-unused-vars
   const [start, setStart] = useState(0);
@@ -222,6 +231,7 @@ const StatisticCard = ({
         <EllipsisVertical className="text-gray-400" size={18} />
       </div>
       <p className="text-2xl font-bold font-poppins my-2">
+        +
         <CountUp
           start={0}
           end={value}
@@ -230,7 +240,8 @@ const StatisticCard = ({
           duration={2.75}
         />
       </p>
-      <div className="flex justify-between gap-2">
+      <p>{des}</p>
+      {/* <div className="flex justify-between gap-2">
         <div className="flex items-center gap-2">
           <span
             className={`${
@@ -272,10 +283,10 @@ const StatisticCard = ({
               {percentage > 0 ? `+${percentage}%` : `${percentage}%`}
             </span>
           </span>
-          <span className="text-sm"> vs last month</span>
+          <span className="text-sm"> vs last {time}</span>
         </div>
         <Icon className="text-gray-500" size={20} />
-      </div>
+      </div> */}
     </div>
   );
 };

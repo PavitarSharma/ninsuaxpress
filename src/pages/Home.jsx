@@ -9,11 +9,11 @@ const Home = () => {
     <>
       <Hero />
       {/* Clients */}
-      <section className="py-14">
-        <div className="container">
+      <section className="py-14 px-4">
+        <div className="max-w-6xl w-full mx-auto">
         <p className="text-center mb-14 text-lg">Trusted By 100+ Companies Worldwide.</p>
           <Swiper
-            slidesPerView={5}
+            slidesPerView={4}
             spaceBetween={30}
             autoplay={{
               delay: 2500,
@@ -26,11 +26,11 @@ const Home = () => {
               0: {
                 slidesPerView: 2,
               },
-              468: {
+              568: {
                 slidesPerView: 3,
               },
               950: {
-                slidesPerView: 5,
+                slidesPerView: 4,
               },
             }}
           >

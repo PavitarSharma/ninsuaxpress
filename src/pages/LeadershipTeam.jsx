@@ -33,8 +33,8 @@ const LeadershipTeam = () => {
         </div>
       </div>
 
-      <div className="">
-        <div className="py-8 grid xl:grid-cols-4 md:grid-cols-3  min-[476px]:grid-cols-2 gap-6 container ">
+      <div className="px-4">
+        <div className="py-8 grid xl:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 gap-6 container">
           {leadershipTeams.map((member, index) => {
             return (
               <div
@@ -84,8 +84,8 @@ const LeadershipTeam = () => {
         </div>
       </div>
 
-      <div className="bg-primary/10 py-16 mt-14">
-        <div className="container flex items-center justify-between flex-wrap gap-6 !px-8">
+      <div className="bg-primary/10 py-16 mt-14 px-4">
+        <div className="container flex items-center justify-between flex-wrap gap-6">
           <div>
             <h3 className="text-xl font-bold">Join Our Team Now</h3>
             <p className="max-w-2xl mt-2">
