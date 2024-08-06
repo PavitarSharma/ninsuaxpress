@@ -179,7 +179,7 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
 
   return (
     <ul
-      className={`absolute z-10 bg-white border  shadow rounded flex flex-col gap-4 p-4 w-64 top-10 before:w-4 before:h-4 before:absolute before:bg-white before:-top-2 before:rotate-45 before:border-gray-300 before:border before:border-b-0 before:border-r-0 ${dropdownClass} ${
+      className={`absolute z-10  bg-white border  shadow rounded flex flex-col gap-4 p-4 w-64 top-10 before:w-4 before:h-4 before:absolute before:bg-white before:-top-2 before:rotate-45 before:border-gray-300 before:border before:border-b-0 before:border-r-0 ${dropdownClass} ${
         dropdown ? "block" : "hidden"
       }`}
     >

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Home, LeadershipTeam } from "./pages";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
         h
         <Route path="/leadership-team" element={<LeadershipTeam />} /> 
       </Routes>
+      <Footer />
     </>
   );
 };
