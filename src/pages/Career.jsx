@@ -1,8 +1,14 @@
 import { Clock, CloudUpload, MapPin } from "lucide-react";
 import { openings } from "../constants";
 import { Input } from "../components";
+import { useEffect } from "react";
 
 const Career = () => {
+
+  useEffect(() => {
+    document.title = "Career | Vinsum Axpress";
+  }, [])
+  
   return (
     <>
       <section className="py-16 px-4">
