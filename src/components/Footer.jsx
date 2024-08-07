@@ -17,6 +17,68 @@ const Footer = () => {
       <div className="container">
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
           <div>
+            <Link to="/">
+              <img src="/images/logo.svg" alt="logo" className="md:w-52 w-44" />
+            </Link>
+            <div className="space-y-3 font-poppins">
+              <a
+                href="tel:0124 4070191"
+                className="text-gray-700 hover:text-primary transition flex items-center gap-2"
+              >
+                <PhoneCall size={20} />
+                <span>0124 4070191</span>
+              </a>
+              <a
+                href="mailto:info@vinsumaxpress.com"
+                className="text-gray-700 hover:text-primary transition flex items-center gap-2"
+              >
+                <Mail size={20} />
+                <span>info@vinsumaxpress.com</span>
+              </a>
+              <a
+                href="mailto:info@vinsumaxpress.com"
+                className="text-gray-700 hover:text-primary transition flex items-center gap-2"
+              >
+                <MapPin size={20} />
+                <span className="text-[15px] flex-1">
+                  404- Electronic City, Udyog Vihar, <br /> Phase IV, Sector 18,
+                  Gurugram, 122015.
+                </span>
+              </a>
+            </div>
+
+            <div className="flex gap-4 flex-wrap mt-4">
+              <a
+                href="#"
+                target="_blank"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-[#243F2F] text-white"
+              >
+                <i className="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-[#243F2F] text-white"
+              >
+                <i className="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-[#243F2F] text-white"
+              >
+                <i className="fa-brands fa-youtube"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-[#243F2F] text-white"
+              >
+                <i className="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <div>
             <h3 className="text-primary font-bold text-xl font-poppins mb-4">
               Quick Links
             </h3>
@@ -122,38 +184,6 @@ const Footer = () => {
 
           <div>
             <h3 className="text-primary font-bold text-xl font-poppins mb-4">
-              Stay Connected
-            </h3>
-            <div className="space-y-3 font-poppins">
-              <a
-                href="tel:0124 4070191"
-                className="text-gray-700 hover:text-primary transition flex items-center gap-2"
-              >
-                <PhoneCall size={20} />
-                <span>0124 4070191</span>
-              </a>
-              <a
-                href="mailto:info@vinsumaxpress.com"
-                className="text-gray-700 hover:text-primary transition flex items-center gap-2"
-              >
-                <Mail size={20} />
-                <span>info@vinsumaxpress.com</span>
-              </a>
-              <a
-                href="mailto:info@vinsumaxpress.com"
-                className="text-gray-700 hover:text-primary transition flex items-center gap-2"
-              >
-                <MapPin size={20} />
-                <span className="flex-1 text-[15px]">
-                  404- Electronic City, Udyog Vihar, Phase IV, Sector 18,
-                  Gurugram, 122015.
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-primary font-bold text-xl font-poppins mb-4">
               Subscribe Now!
             </h3>
             <p className="text-sm">
@@ -176,44 +206,20 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                target="_blank"
-                className="text-lg text-gray-800 hover:text-primary transition"
-              >
-                <i className="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                className="text-lg text-gray-800 hover:text-primary transition"
-              >
-                <i className="fa-brands fa-x-twitter"></i>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                className="text-lg text-gray-800 hover:text-primary transition"
-              >
-                <i className="fa-brands fa-youtube"></i>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                className="text-lg text-gray-800 hover:text-primary transition"
-              >
-                <i className="fa-brands fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
         </div>
 
         <div className="flex items-center flex-col justify-center gap-2 mt-10">
           {/* <img src="/images/logo.svg" alt="logo" className="h-20" /> */}
-          <p className="text-center font-poppins">© Copyright {new Date().getFullYear()} <span className="text-primary">Vinsum Axpress</span>. All Rights Reserved</p>
-          <p className="text-center text-sm font-poppins">Designed by <span className="text-primary">Vinsum Axpress Group</span>.</p>
+          <p className="text-center font-poppins">
+            © Copyright {new Date().getFullYear()}{" "}
+            <span className="text-primary">Vinsum Axpress</span>. All Rights
+            Reserved
+          </p>
+          <p className="text-center text-sm font-poppins">
+            Designed by{" "}
+            <span className="text-primary">Vinsum Axpress Group</span>.
+          </p>
         </div>
       </div>
     </footer>
