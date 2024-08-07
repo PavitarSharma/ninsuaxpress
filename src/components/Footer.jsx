@@ -13,7 +13,7 @@ const Footer = () => {
     // Send email to server
   };
   return (
-    <footer className="py-16 bg-white border-t px-4">
+    <footer className="pt-16 bg-white border-t px-4">
       <div className="container">
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
           <div>
@@ -63,7 +63,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/about-us"
+                  to="/contact-us"
                   className="text-gray-700 hover:text-primary transition"
                 >
                   Contact
@@ -212,7 +212,7 @@ const Footer = () => {
 
         <div className="flex items-center flex-col justify-center gap-2 mt-10">
           {/* <img src="/images/logo.svg" alt="logo" className="h-20" /> */}
-          <p className="text-center font-poppins">© Copyright 2022 <span className="text-primary">Vinsum Axpress</span>. All Rights Reserved</p>
+          <p className="text-center font-poppins">© Copyright {new Date().getFullYear()} <span className="text-primary">Vinsum Axpress</span>. All Rights Reserved</p>
           <p className="text-center text-sm font-poppins">Designed by <span className="text-primary">Vinsum Axpress Group</span>.</p>
         </div>
       </div>

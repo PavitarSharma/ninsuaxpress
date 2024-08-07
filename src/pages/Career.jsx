@@ -1,14 +1,100 @@
 import { Clock, CloudUpload, MapPin } from "lucide-react";
 import { openings } from "../constants";
-import { Input } from "../components";
-import { useEffect } from "react";
+import { Button, Input } from "../components";
+import { useCallback, useEffect, useState } from "react";
+import { useDropzone } from "react-dropzone";
+import toast from "react-hot-toast";
 
+const initialValues = {
+  email: "",
+  fullName: "",
+  phone: "",
+  experience: "",
+  currentCtc: "",
+  expectedCtc: "",
+};
 const Career = () => {
+  const [formValues, setFormValues] = useState(initialValues);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     document.title = "Career | Vinsum Axpress";
-  }, [])
-  
+  }, []);
+
+  const onDrop = useCallback((acceptedFiles) => {
+    setErrorMessage("");
+    const myFile = acceptedFiles[0];
+    const allowedFileTypes = [
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+    const maxSize = 10 * 1024 * 1024;
+    if (!allowedFileTypes.includes(myFile.type)) {
+      setErrorMessage("Error: Only PDF or DOCX files are allowed.");
+      return;
+    }
+
+    if (myFile.size > maxSize) {
+      setErrorMessage("Error: File size should be 10MB or less.");
+      return;
+    }
+    setFile(myFile);
+    setErrorMessage("");
+  }, []);
+
+  const handleInputChange = (event) => {
+    const { id, value } = event.target;
+    setFormValues({ ...formValues, [id]: value });
+  };
+
+  const handleSubmitApplication = (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    setErrorMessage("");
+
+    const { fullName, email, phone, experience, expectedCtc, currentCtc } =
+      formValues;
+
+    if (
+      !fullName ||
+      !email ||
+      !phone ||
+      !experience ||
+      !currentCtc ||
+      !expectedCtc ||
+      !file
+    ) {
+      setIsLoading(false);
+      setErrorMessage("All fields are required");
+      return;
+    }
+
+    const formdata = new FormData();
+    formdata.append("fullName", fullName);
+    formdata.append("email", email);
+    formdata.append("phone", phone);
+    formdata.append("experience", experience);
+    formdata.append("currentCtc", currentCtc);
+    formdata.append("expectedCtc", expectedCtc);
+    if (file) formdata.append("resume", file);
+
+    // Simulate sending email
+    setTimeout(() => {
+      setIsLoading(false);
+      setFormValues(initialValues);
+      setFile(null)
+      toast.success("Application submitted successfully!");
+    }, 2000);
+  };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    multiple: false,
+  });
+  const { fullName, email, phone, experience, expectedCtc, currentCtc } =
+    formValues;
   return (
     <>
       <section className="py-16 px-4">
@@ -80,35 +166,91 @@ const Career = () => {
           Apply for the role
         </h1>
         <div className="container">
-          <form className="space-y-6 max-w-4xl w-full mx-auto">
+          <form
+            onSubmit={handleSubmitApplication}
+            className="space-y-6 max-w-4xl w-full mx-auto"
+          >
             <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
-              <Input label="Full Name" id="fullName" />
-              <Input label="Email" id="email" type="email" />
-              <Input label="Phone" id="phone" />
-              <Input label="Experience" id="experience" />
-              <Input label="Current CTC" id="currentCtc" />
-              <Input label="Expected CTC" id="expectedCtc" />
+              <Input
+                label="Full Name"
+                id="fullName"
+                value={fullName}
+                onChange={handleInputChange}
+              />
+              <Input
+                label="Email"
+                id="email"
+                type="email"
+                value={email}
+                onChange={handleInputChange}
+              />
+              <Input
+                label="Phone"
+                id="phone"
+                value={phone}
+                onChange={handleInputChange}
+              />
+              <Input
+                label="Experience"
+                id="experience"
+                value={experience}
+                onChange={handleInputChange}
+              />
+              <Input
+                label="Current CTC"
+                id="currentCtc"
+                value={currentCtc}
+                onChange={handleInputChange}
+              />
+              <Input
+                label="Expected CTC"
+                id="expectedCtc"
+                value={expectedCtc}
+                onChange={handleInputChange}
+              />
             </div>
             <label
+              {...getRootProps()}
+              onClick={(e) => e.stopPropagation()}
               htmlFor="file"
               className="flex flex-col items-center justify-center w-full border-2 border-dashed border-gray-300 rounded-lg h-56 !mt-10"
             >
               <CloudUpload size={42} className="text-gray-600" />
-              <p className="mb-2 text-sm text-gray-500">
-                <span className="font-semibold">Click to upload</span> or drag
-                and drop
-              </p>
-              <p className="text-xs text-gray-500">
-                PDF, DOCX, etc (MAX. 800x400px)
-              </p>
-              <input type="file" id="file" hidden />
+              {isDragActive ? (
+                <p className="text-xs text-gray-500">
+                  Release to drop the files here
+                </p>
+              ) : (
+                <>
+                  <p className="mb-2 text-sm text-gray-500">
+                    <span className="font-semibold">Click to upload</span> or
+                    drag and drop
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    PDF, DOCX, etc (MAX. 800x400px)
+                  </p>
+                </>
+              )}
+              <input
+                type="file"
+                id="file"
+                accept=".pdf,.docx"
+                hidden
+                {...getInputProps()}
+              />
             </label>
-            <button
+            <Button
+              loading={isLoading}
+              disabled={isLoading}
               type="submit"
-              className="bg-primary text-white rounded-full px-6 py-3 font-medium"
-            >
-              Submit Application
-            </button>
+              label="Submit Application"
+              loadingMessage="Submitting..."
+            />
+            {errorMessage && (
+              <div className="py-4 px-2 bg-primary/10 text-primary rounded">
+                {errorMessage}
+              </div>
+            )}
 
             <div className="bg-gray-200 rounded-lg py-4 px-2 !mt-10">
               <p className="text-center">
@@ -123,7 +265,7 @@ const Career = () => {
       </section>
 
       <section className="py-16 px-4">
-      <h1 className="text-center font-bold text-4xl mb-10">Grow With Us</h1>
+        <h1 className="text-center font-bold text-4xl mb-10">Grow With Us</h1>
         <div className="container grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">
           <div className="p-8 bg-white border border-gray-300 rounded-tr-[62px] rounded-bl-[62px] relative bg-gradient-to-b from-slate-50 to-primary/10">
             <h4 className="text-2xl font-bold mb-4">Why We?</h4>
