@@ -18,6 +18,11 @@
   padding: 0;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-monotserrat overflow-x-hidden w-full h-full;
 }
@@ -27,5 +32,15 @@ a {
 }
 
 .container {
-  @apply max-w-[1500px] w-full mx-auto md:px-0 px-6;
+  @apply sm:px-16  px-6  max-w-7xl mx-auto;
 }
+
+.screen-section {
+  @apply h-screen;
+
+}
+
+.hash-span {
+  @apply py-8 block;
+}
+

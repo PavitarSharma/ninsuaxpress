@@ -1,3 +1,9 @@
+import ROUTES from "../routes";
+import { FaWarehouse, FaRoad } from "react-icons/fa";
+import { MdOutlineEmojiTransportation } from "react-icons/md";
+import { GoPackage } from "react-icons/go";
+import { MdOutlineInventory2 } from "react-icons/md";
+
 export const menuItemsData = [
   {
     url: "/",
@@ -7,7 +13,7 @@ export const menuItemsData = [
     title: "About Us",
     submenu: [
       {
-        url: "/about",
+        url: "/about-us",
         title: "Vinsum Axpress History",
       },
       {
@@ -36,7 +42,7 @@ export const menuItemsData = [
     title: "Our Services",
     submenu: [
       {
-        url: "",
+        url: ROUTES.SERVICES.MULTIMODAL_TRANSPORTATION,
         title: "Multimodal Transportation",
         submenu: [
           {
@@ -50,19 +56,19 @@ export const menuItemsData = [
         ],
       },
       {
-        url: "/about",
+        url: ROUTES.SERVICES.WAREHOUSING_SOLUTION,
         title: "Warehousing Solution",
       },
       {
-        url: "/about",
+        url: ROUTES.SERVICES.PACKAGING_SOLUTION,
         title: "Packaging Solution",
       },
       {
-        url: "/about",
+        url: ROUTES.SERVICES.THRRE_PL_AND_INVENTORY_MANAGEMENT,
         title: "3PL & Inventory Management",
       },
       {
-        url: "/about",
+        url: ROUTES.SERVICES.FOUR_PL_AND_INPLANT_LOGISTICS_PROJECT_MANAGEMENT,
         title: "4PL/Inplant Logistics/Project Management",
       },
     ],
@@ -117,6 +123,18 @@ export const menuItemsData = [
         title: "Career",
       },
     ],
+  },
+];
+
+export const bannerData = [
+  {
+    image: "/images/banner/banner1.jpeg",
+  },
+  {
+    image: "/images/banner/banner2.jpeg",
+  },
+  {
+    image: "/images/banner/banner3.jpeg",
   },
 ];
 
@@ -227,32 +245,120 @@ export const leadershipTeams = [
   },
 ];
 
-export const clients = [
+
+
+export const servicesTypes = [
   {
-    image: "/images/clients/anand.png",
+    image: "/images/clock.png",
+    title: "Express Service",
+    description:
+      "Our express services promise to deliver your consignment within a stipulated time frame.",
+    features: [
+      "Guaranteed On-Time Delivery",
+      "Real-Time Shipment Tracking",
+      "Priority Handling for All Shipments",
+      "24/7 Customer Support",
+      "Flexible Scheduling Options",
+    ],
   },
   {
-    image: "/images/clients/atl.png",
+    image: "/images/security.png",
+    title: "Safe Delivery",
+    description: "We ensure zero in-transit damages to your consignment.",
+    features: [
+      "Secure Packaging for All Shipments",
+      "Advanced Handling Procedures",
+      "Real-Time Damage Monitoring",
+      "Comprehensive Insurance Coverage",
+      "Expert Trained Personnel",
+    ],
   },
   {
-    image: "/images/clients/bajaj.png",
-  },
-  {
-    image: "/images/clients/fag.png",
-  },
-  {
-    image: "/images/clients/ford.png",
-  },
-  {
-    image: "/images/clients/hero.png",
-  },
-  {
-    image: "/images/clients/mahindra.png",
-  },
-  {
-    image: "/images/clients/yamaha.png",
+    image: "/images/support.png",
+    title: "24/7 Support",
+    description:
+      "We provide round-the-clock 24/7 quality support services anytime, anywhere.",
+    features: [
+      "Immediate Assistance Anytime",
+      "Multi-Channel Support (Phone, Email, Chat)",
+      "Dedicated Support Team",
+      "Personalized Customer Solutions",
+      "Comprehensive Knowledge Base",
+    ],
   },
 ];
+
+export const services = [
+  {
+    icon: MdOutlineEmojiTransportation,
+    title: "Multimodal Transportation",
+    description:
+      "Vinsum axpress provides the most efficient combination of multiple means of transport , whilst optimizing deadlines & keeping the logistics costs under control.",
+    path: ROUTES.SERVICES.MULTIMODAL_TRANSPORTATION,
+  },
+  {
+    icon: FaWarehouse,
+    title: "Warehouse Management",
+    description:
+      "We are offering wide range of services including consolidation & packaging of cargoes of various types & sizes , handling of stock & inventory management solution in our warehouses , as well as distribution wherever needed.",
+    path: ROUTES.SERVICES.WAREHOUSING_SOLUTION,
+  },
+  {
+    icon: GoPackage,
+    title: "Packaging Service/Model",
+    description:
+      "We have a dedicated solution design team that specializes in material level knowledge and can design solutions based on inputs provided by the customer about the component / part and produce feasibility reports for all your packaging needs consultation.",
+    path: ROUTES.SERVICES.PACKAGING_SOLUTION,
+  },
+  {
+    icon: MdOutlineInventory2,
+    title: "3PL & Inventory Management",
+    description:
+      "We are Third-party logistics providers typically specialize in integrated operations of warehousing and transportation services that can be scaled and customized to customer’s needs, based on market conditions to meet the demands and delivery service requirements for their products.",
+    path: ROUTES.SERVICES.THRRE_PL_AND_INVENTORY_MANAGEMENT,
+  },
+  {
+    icon: FaRoad,
+    title: "4PL/Inplant Logistics/Project Management",
+    description:
+      "We provide a wide range of supply chain services including 4PL , Inplant logistics & Project Management.",
+    path: ROUTES.SERVICES.FOUR_PL_AND_INPLANT_LOGISTICS_PROJECT_MANAGEMENT,
+  },
+];
+
+export const whyVinsumAxpress = [
+  {
+    image: "/images/whyus/whyus-icon1.svg",
+    title: "Single Window Solution",
+    description:
+      "Providing end-to-end supply chain services, including MMT, warehousing, 3PL & inventory management, returnable packaging, 4PL, in-plant logistics, and project management.",
+  },
+  {
+    image: "/images/whyus/whyus-icon2.svg",
+    title: "Credibility & Reliability",
+    description:
+      "With over 18 years of experience in logistics & supply chain management, we have a base of 1000+ satisfied customers.",
+  },
+  {
+    image: "/images/whyus/whyus-icon3.svg",
+    title: "Domain Expertise",
+    description:
+      "Our experienced and dedicated tech-driven team offers domain-specific expertise to provide end-to-end supply chain services.",
+  },
+  {
+    image: "/images/whyus/whyus-icon4.svg",
+    title: "Flexibility & Customizability",
+    description:
+      "The range of products and services by VINSUM AXPRESS are designed keeping in mind the flexible and customized needs of a customer as per their demand.",
+  },
+  {
+    image: "/images/whyus/whyus-icon5.svg",
+    title: "Cost-Effective & Sustainable",
+    description:
+      "We provide cost effective solutions which are sustainable over long period of time.",
+  },
+];
+
 
 export const openings = [
   {
@@ -331,5 +437,297 @@ export const openings = [
     vacancy: 1,
     location: "JNPT (MBY)",
     role: "Full Time",
+  },
+];
+
+
+export const clients = [
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
+  },
+  {
+    image: "/images/clients/anand.png",
+  },
+  {
+    image: "/images/clients/atl.png",
+  },
+  {
+    image: "/images/clients/bajaj.png",
+  },
+  {
+    image: "/images/clients/fag.png",
+  },
+  {
+    image: "/images/clients/ford.png",
+  },
+  {
+    image: "/images/clients/hero.png",
+  },
+  {
+    image: "/images/clients/mahindra.png",
+  },
+  {
+    image: "/images/clients/yamaha.png",
   },
 ];

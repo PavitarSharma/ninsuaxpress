@@ -13,7 +13,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       {...rest}
-      className="mt-4 bg-primary text-white px-4 py-3 rounded-md"
+      className="bg-primary text-white px-4 py-3 rounded-md hover:drop-shadow-lg hover:shadow hover:bg-primary/90"
     >
       {loading ? loadingMessage : label}
     </button>

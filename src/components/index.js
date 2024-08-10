@@ -4,3 +4,7 @@ export { default as Hero } from "./Hero";
 export { default as Input } from "./Input";
 export { default as Button } from "./Button";
 export { default as Textarea } from "./Textarea";
+export { default as ParallaxSection } from "./ParallaxSection";
+export { default as SectionWrapper } from "./SectionWrapper";
+export { default as Statistics} from "./Statistics";
+export { default as ScrollToTop } from "./ScrollToTop";

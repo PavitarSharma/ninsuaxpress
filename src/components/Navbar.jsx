@@ -1,9 +1,10 @@
 import { AlignJustify, Building2, Truck, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { menuItemsData } from "../constants";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
+  const { pathname} = useLocation()
   const depthLevel = 0;
   const [open, setOpen] = useState(false);
 
@@ -11,11 +12,13 @@ const Navbar = () => {
     setOpen((prev) => !prev);
   }, []);
 
+  const isHomePage = pathname === "/"
+
   return (
     <>
-      <header className="bg-white border-b sticky top-0 left-0 w-full right-0 z-50">
+      <header className={`${isHomePage ? "bg-transparent absolute z-50 left-0 right-0 top-0" : ""}`}>
         <div className="flex items-center justify-between lg:flex-row flex-row-reverse py-2 gap-4 container !px-4">
-        <button onClick={handleToggleMenu} className="xl:hidden inline">
+          <button onClick={handleToggleMenu} className="xl:hidden inline">
             <AlignJustify size={28} />
           </button>
           <Link to="/">

@@ -78,6 +78,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
           <div>
             <h3 className="text-primary font-bold text-xl font-poppins mb-4">
               Quick Links
@@ -117,7 +118,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/about-us"
+                  to="/blog"
                   className="text-gray-700 hover:text-primary transition"
                 >
                   Blog
