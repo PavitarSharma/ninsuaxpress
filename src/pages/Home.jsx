@@ -3,7 +3,6 @@ import {
   Input,
   Navbar,
   ParallaxSection,
-  SectionWrapper,
   Statistics,
 } from "../components";
 import "swiper/css";
@@ -17,7 +16,7 @@ import {
   whyVinsumAxpress,
 } from "../constants";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn, staggerContainer, textVariant } from "../variants";
+import { fadeIn } from "../variants";
 import { ChevronsRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes";
@@ -129,7 +128,11 @@ const Home = () => {
 
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 py-6 mt-8">
             {servicesTypes.map((data, index) => (
-              <div
+              <motion.div
+                variants={fadeIn("up", index * 0.25)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: index * 0.25 }}
                 key={index}
                 className="rounded-xl p-4 hover:drop-shadow-md transition bg-white border border-gray-300 group hover:-translate-y-2 duration-1000 cursor-pointer flex flex-col items-start hover:bg-blue-50/20"
               >
@@ -142,7 +145,7 @@ const Home = () => {
                 <p className="mt-8 text-gray-600 text-sm flex-1">
                   {data.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -158,23 +161,41 @@ const Home = () => {
             with the services we offer.
           </p>
 
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 py-6 mt-8">
+          <motion.div
+            variants={fadeIn("right", 0.25)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 py-6 mt-8"
+          >
             {services.slice(0, 3).map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}
-          </div>
+          </motion.div>
 
-          <div className="grid  sm:grid-cols-2 gap-4 py-4">
+          <motion.div
+            variants={fadeIn("left", 0.25)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="grid  sm:grid-cols-2 gap-4 py-4"
+          >
             {services.slice(3, 5).map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}
-          </div>
+          </motion.div>
         </div>
       </ParallaxSection>
 
       <ParallaxSection>
         <div className="container flex lg:flex-row flex-col items-center gap-6 mx-auto py-16">
-          <div className="lg:w-1/2 w-full">
+          <motion.div
+            variants={fadeIn("right", 0.25)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="lg:w-1/2 w-full"
+          >
             <h1 className="text-4xl font-semibold lg:text-start text-center">
               Derivering Satisfaction around the globe
             </h1>
@@ -187,31 +208,50 @@ const Home = () => {
               label="Call to action"
               onClick={() => navigate(ROUTES.CONTACT)}
             />
-          </div>
+          </motion.div>
 
-          <div className="lg:w-1/2 w-full lg:h-[600px] sm:h-[500px] h-[350px]">
+          <motion.div
+            variants={fadeIn("left", 0.25)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="lg:w-1/2 w-full lg:h-[600px] sm:h-[500px] h-[350px]"
+          >
             <video
               src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               autoPlay
               muted
               className="w-full h-full object-cover m-auto rounded-xl"
             />
-          </div>
+          </motion.div>
         </div>
       </ParallaxSection>
 
       <ParallaxSection>
         <div className="container mx-auto py-16">
-          <h1 className="sm:text-5xl text-4xl font-bold text-center">
-            Why vinsum axpress
-          </h1>
-          <p className="max-w-4xl w-full mx-auto text-center text-gray-600 mt-4">
-            Trusted partner for logistics solutions, offering reliability,
-            expertise, and customized, sustainable services tailored to meet
-            unique client needs.
-          </p>
+          <motion.div
+            variants={fadeIn("left", 0.25)}
+            initial="hidden"
+            viewport={{ once: false, amount: 0.7 }}
+            whileInView="show"
+          >
+            <h1 className="sm:text-5xl text-4xl font-bold text-center">
+              Why vinsum axpress
+            </h1>
+            <p className="max-w-4xl w-full mx-auto text-center text-gray-600 mt-4">
+              Trusted partner for logistics solutions, offering reliability,
+              expertise, and customized, sustainable services tailored to meet
+              unique client needs.
+            </p>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 py-6 mt-8">
+          <motion.div
+            variants={fadeIn("top", 0.25)}
+            initial="hidden"
+            viewport={{ once: false, amount: 0.7 }}
+            whileInView="show"
+            className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 py-6 mt-8"
+          >
             {whyVinsumAxpress.map((data, index) => (
               <div
                 key={index}
@@ -228,7 +268,7 @@ const Home = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </ParallaxSection>
 
@@ -237,14 +277,20 @@ const Home = () => {
           style={{ backgroundImage: "url(/images/background.jpg)" }}
           className="w-full h-full  bg-cover bg-no-repeat"
         >
-          <div className="container mx-auto py-16">
+          <motion.div
+            variants={fadeIn("bottom", 0.25)}
+            initial="hidden"
+            viewport={{ once: false, amount: 0.7 }}
+            whileInView="show"
+            className="container mx-auto py-16"
+          >
             <h1 className="sm:text-5xl text-4xl font-bold text-center">
               Our trusted clients
             </h1>
             <p className="max-w-4xl w-full mx-auto text-center text-gray-600 mt-4">
               World&#39;s leading automobile industriesdsd
             </p>
-          </div>
+          </motion.div>
           <div className="sm:my-10 space-y-16">
             <Swiper
               slidesPerView={8}
@@ -321,27 +367,46 @@ const Home = () => {
             </Swiper>
           </div>
 
-          <div className="flex items-center justify-center py-12">
+          <motion.div
+            variants={fadeIn("top", 0.25)}
+            initial="hidden"
+            viewport={{ once: false, amount: 0.7 }}
+            whileInView="show"
+            className="flex items-center justify-center py-12"
+          >
             <Button
               label="Explore all clients"
               onClick={() => navigator(ROUTES.ABOUT.OUR_CLIENTS)}
             />
-          </div>
+          </motion.div>
         </div>
       </ParallaxSection>
 
       <ParallaxSection>
         <div className="py-16 container">
-          <h1 className="sm:text-5xl text-4xl font-bold text-center">
-            What makes us special?
-          </h1>
-          <p className="max-w-4xl w-full mx-auto text-center text-gray-600 mt-4">
-            Almost 2000+ clients served till now with a customer base of 1000+
-            satisfied customers.
-          </p>
+          <motion.div
+            variants={fadeIn("bottom", 0.25)}
+            initial="hidden"
+            viewport={{ once: false, amount: 0.7 }}
+            whileInView="show"
+          >
+            <h1 className="sm:text-5xl text-4xl font-bold text-center">
+              What makes us special?
+            </h1>
+            <p className="max-w-4xl w-full mx-auto text-center text-gray-600 mt-4">
+              Almost 2000+ clients served till now with a customer base of 1000+
+              satisfied customers.
+            </p>
+          </motion.div>
 
           <div className="flex lg:flex-row flex-col items-center gap-6 py-10">
-            <div className="lg:w-1/2 w-full">
+            <motion.div
+              variants={fadeIn("right", 0.25)}
+              initial="hidden"
+              viewport={{ once: false, amount: 0.7 }}
+              whileInView="show"
+              className="lg:w-1/2 w-full"
+            >
               <h1 className="text-4xl font-semibold lg:text-start text-center">
                 Get updates track your docked
               </h1>
@@ -362,18 +427,30 @@ const Home = () => {
                 alt="special"
                 className="mx-auto w-full h-full"
               />
-            </div>
+            </motion.div>
 
-            <div className="lg:w-1/2 w-full lg:h-[600px] sm:h-[500px] h-[350px] border rounded-xl flex items-center justify-center border-gray-300 shadow bg-white">
+            <motion.div
+              variants={fadeIn("left", 0.25)}
+              initial="hidden"
+              viewport={{ once: false, amount: 0.7 }}
+              whileInView="show"
+              className="lg:w-1/2 w-full lg:h-[600px] sm:h-[500px] h-[350px] border rounded-xl flex items-center justify-center border-gray-300 shadow bg-white"
+            >
               <h1 className="text-xl font-bold">Map</h1>
-            </div>
+            </motion.div>
           </div>
         </div>
       </ParallaxSection>
 
       <ParallaxSection className="bg-gradient-to-t relative to-primary/20 from-white px-4">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Statistics />
+         <motion.div
+              variants={fadeIn("top", 0.25)}
+              initial="hidden"
+              viewport={{ once: false, amount: 0.7 }}
+              whileInView="show">
+                <Statistics />
+              </motion.div>
         </div>
       </ParallaxSection>
     </>
